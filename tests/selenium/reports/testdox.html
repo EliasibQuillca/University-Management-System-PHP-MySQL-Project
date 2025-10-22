@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Reporte de Pruebas Automatizadas - Sistema Universitario</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-family: 'Segoe UI', Arial, sans-serif;
+                margin: 2rem;
+                background-color: #f8f9fa;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: white;
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            h1 {
+                color: #2c3e50;
+                text-align: center;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid #eee;
+            }
+
+            h2 {
+                color: #34495e;
+                font-size: 1.5rem;
+                margin: 1.5rem 0;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .test-suite {
+                margin-bottom: 2rem;
+                padding: 1rem;
+                background: #f8f9fa;
+                border-radius: 4px;
+            }
+
+            .test-case {
+                margin: 1rem 0;
+                padding: 1rem;
+                background: white;
+                border-left: 4px solid #ddd;
+            }
+
+            .success {
+                border-left-color: #2ecc71;
+            }
+
+            .success:before {
+                color: #2ecc71;
+                content: '✓';
+                padding-right: 0.5rem;
+                font-weight: bold;
+            }
+
+            .failure {
+                border-left-color: #e74c3c;
+            }
+
+            .failure:before {
+                color: #e74c3c;
+                content: '✗';
+                padding-right: 0.5rem;
+                font-weight: bold;
+            }
+
+            .details {
+                margin-top: 0.5rem;
+                padding-left: 1.5rem;
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            .timestamp {
+                color: #7f8c8d;
+                font-size: 0.8rem;
+                text-align: right;
+            }
+
+            .summary {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
+                background: #ecf0f1;
+                border-radius: 4px;
+                margin: 1rem 0;
+            }
+
+            .summary-item {
+                text-align: center;
+            }
+
+            .summary-label {
+                font-size: 0.9rem;
+                color: #7f8c8d;
+            }
+
+            .summary-value {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #2c3e50;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Reporte de Pruebas Automatizadas</h1>
+            
+            <div class="summary">
+                <div class="summary-item">
+                    <div class="summary-label">Total de Pruebas</div>
+                    <div class="summary-value">1</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Exitosas</div>
+                    <div class="summary-value" style="color: #2ecc71">0</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Fallidas</div>
+                    <div class="summary-value" style="color: #e74c3c">1</div>
+                </div>
+            </div>
+
+            <div class="test-suite">
+                <h2>Prueba de Login (Admin)</h2>
+                <div class="test-case failure">
+                    <strong>Inicio de Sesión Administrativo</strong>
+                    <div class="details">
+                        <p>Estado: Fallido</p>
+                        <p>Detalles del error: No se pudo verificar el acceso al dashboard después del login</p>
+                        <p>Pasos ejecutados:</p>
+                        <ul>
+                            <li>✓ Navegación a la página de login</li>
+                            <li>✓ Ingreso de credenciales</li>
+                            <li>✓ Click en botón de login</li>
+                            <li>✗ Verificación de acceso al dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timestamp">
+                Generado el: 22 de octubre de 2025 - 09:35:00
+            </div>
+        </div>
+    </body>
+</html>

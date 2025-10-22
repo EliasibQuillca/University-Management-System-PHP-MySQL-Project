@@ -1,0 +1,53 @@
+{
+  "id": "admin-login-test-suite",
+  "version": "2.0",
+  "name": "Admin Login Test Suite",
+  "url": "http://localhost:8000",
+  "tests": [{
+    "id": "test-admin-login",
+    "name": "Test Admin Login Exitoso",
+    "commands": [
+      {
+        "id": "1",
+        "comment": "Ir a la página de login de administrador",
+        "command": "open",
+        "target": "/public/admin_login.php",
+        "value": ""
+      },
+      {
+        "id": "2",
+        "comment": "Verificar título de la página",
+        "command": "assertText",
+        "target": "css=h1.text-xl",
+        "value": "Sign in to your account"
+      },
+      {
+        "id": "3",
+        "comment": "Ingresar username",
+        "command": "type",
+        "target": "id=username",
+        "value": "admin"
+      },
+      {
+        "id": "4",
+        "comment": "Ingresar password",
+        "target": "id=password",
+        "value": "123"
+      },
+      {
+        "id": "5",
+        "comment": "Click en el botón de login",
+        "command": "clickAndWait",
+        "target": "css=button[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "6",
+        "comment": "Esperar redirección",
+        "command": "waitForElementPresent",
+        "target": "css=.dashboard-content",
+        "value": "30000"
+      }
+    ]
+  }]
+}

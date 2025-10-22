@@ -1,0 +1,102 @@
+{
+  "id": "admin-login-test-suite",
+  "version": "2.0",
+  "name": "Admin Login Test Suite",
+  "url": "http://localhost:8000",
+  "tests": [{
+    "id": "test-admin-login",
+    "name": "Test Admin Login Exitoso",
+    "commands": [
+      {
+        "id": "1",
+        "comment": "Ir a la página de login de administrador",
+        "command": "open",
+        "target": "/admin_login.php",
+        "value": ""
+      },
+      {
+        "id": "2",
+        "comment": "Verificar que estamos en la página correcta",
+        "command": "assertText",
+        "target": "css=h1",
+        "value": "Sign in to your account"
+      },
+      {
+        "id": "3",
+        "comment": "Ingresar username",
+        "command": "type",
+        "target": "name=username",
+        "value": "admin"
+      },
+      {
+        "id": "4",
+        "comment": "Ingresar password",
+        "command": "type",
+        "target": "name=password",
+        "value": "123"
+      },
+      {
+        "id": "5",
+        "comment": "Click en el botón de login",
+        "command": "clickAndWait",
+        "target": "css=button[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "6",
+        "comment": "Esperar a que cargue el dashboard",
+        "command": "pause",
+        "target": "1000",
+        "value": ""
+      },
+      {
+        "id": "7",
+        "comment": "Verificar login exitoso comprobando que estamos en el dashboard",
+        "command": "assertElementPresent",
+        "target": "css=.dashboard-content",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "test-admin-login-fallido",
+    "name": "Test Admin Login Fallido",
+    "commands": [
+      {
+        "id": "1",
+        "comment": "Ir a la página de login de administrador",
+        "command": "open",
+        "target": "/admin_login.php",
+        "value": ""
+      },
+      {
+        "id": "2",
+        "comment": "Ingresar username incorrecto",
+        "command": "type",
+        "target": "name=username",
+        "value": "admin_wrong"
+      },
+      {
+        "id": "3",
+        "comment": "Ingresar password incorrecto",
+        "command": "type",
+        "target": "name=password",
+        "value": "wrong_password"
+      },
+      {
+        "id": "4",
+        "comment": "Click en el botón de login",
+        "command": "clickAndWait",
+        "target": "css=button[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "5",
+        "comment": "Verificar mensaje de error",
+        "command": "assertText",
+        "target": "css=p.text-red-500",
+        "value": "Username or Password is invalid"
+      }
+    ]
+  }]
+}

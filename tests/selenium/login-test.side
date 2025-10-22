@@ -1,0 +1,47 @@
+{
+  "id": "login-test-suite",
+  "version": "2.0",
+  "name": "Login Test Suite",
+  "url": "http://localhost:8000",
+  "tests": [{
+    "id": "test-admin-login",
+    "name": "Test Admin Login",
+    "commands": [
+      {
+        "id": "1",
+        "comment": "Navegar a la página de login",
+        "command": "open",
+        "target": "/admin_login.php",
+        "value": ""
+      },
+      {
+        "id": "2",
+        "comment": "Ingresar username",
+        "command": "type",
+        "target": "name=username",
+        "value": "admin"
+      },
+      {
+        "id": "3",
+        "comment": "Ingresar password",
+        "command": "type",
+        "target": "name=password",
+        "value": "123"
+      },
+      {
+        "id": "4",
+        "comment": "Click en login",
+        "command": "clickAndWait",
+        "target": "css=input[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "5",
+        "comment": "Verificar redirección exitosa",
+        "command": "assertElementPresent",
+        "target": "css=.dashboard-content",
+        "value": ""
+      }
+    ]
+  }]
+}

@@ -13,5 +13,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.6"
+    },
+    "require": {
+        "php-webdriver/webdriver": "^1.15"
     }
 }

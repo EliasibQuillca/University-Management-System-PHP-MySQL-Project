@@ -1,0 +1,117 @@
+{
+  "id": "matricula-test-suite",
+  "version": "2.0",
+  "name": "Matrícula Test Suite",
+  "url": "http://localhost:8000",
+  "tests": [{
+    "id": "test-matricula-valida",
+    "name": "Test Matrícula Válida",
+    "commands": [
+      {
+        "id": "1",
+        "comment": "Ir a la página de registro de estudiante",
+        "command": "open",
+        "target": "/student_login.php",
+        "value": ""
+      },
+      {
+        "id": "2",
+        "comment": "Click en el enlace de registro",
+        "command": "click",
+        "target": "linkText=Register",
+        "value": ""
+      },
+      {
+        "id": "3",
+        "comment": "Ingresar nombre completo",
+        "command": "type",
+        "target": "name=name",
+        "value": "Estudiante Prueba"
+      },
+      {
+        "id": "4",
+        "comment": "Ingresar ID de estudiante",
+        "command": "type",
+        "target": "name=st_id",
+        "value": "202510001"
+      },
+      {
+        "id": "5",
+        "comment": "Ingresar correo",
+        "command": "type",
+        "target": "name=email",
+        "value": "estudiante@test.com"
+      },
+      {
+        "id": "6",
+        "comment": "Ingresar contraseña",
+        "command": "type",
+        "target": "name=password",
+        "value": "123456"
+      },
+      {
+        "id": "7",
+        "comment": "Enviar formulario de registro",
+        "command": "clickAndWait",
+        "target": "css=input[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "8",
+        "comment": "Verificar registro exitoso",
+        "command": "assertText",
+        "target": "css=.alert-success",
+        "value": "Registration successful!"
+      },
+      {
+        "id": "9",
+        "comment": "Iniciar sesión con las credenciales",
+        "command": "type",
+        "target": "name=st_id",
+        "value": "202510001"
+      },
+      {
+        "id": "10",
+        "comment": "Ingresar contraseña",
+        "command": "type",
+        "target": "name=password",
+        "value": "123456"
+      },
+      {
+        "id": "11",
+        "comment": "Click en login",
+        "command": "clickAndWait",
+        "target": "css=input[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "12",
+        "comment": "Ir a la sección de matrícula",
+        "command": "click",
+        "target": "linkText=Course Registration",
+        "value": ""
+      },
+      {
+        "id": "13",
+        "comment": "Seleccionar cursos",
+        "command": "click",
+        "target": "css=input[type='checkbox']",
+        "value": ""
+      },
+      {
+        "id": "14",
+        "comment": "Enviar matrícula",
+        "command": "clickAndWait",
+        "target": "css=input[type='submit']",
+        "value": ""
+      },
+      {
+        "id": "15",
+        "comment": "Verificar matrícula exitosa",
+        "command": "assertText",
+        "target": "css=.alert-success",
+        "value": "Course registration successful!"
+      }
+    ]
+  }]
+}
